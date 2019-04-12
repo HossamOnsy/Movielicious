@@ -1,6 +1,6 @@
-package com.sam.movielicious.injection.component
+package com.sam.movielicious.di.component
 
-import com.sam.movielicious.injection.module.NetworkModule
+import com.sam.movielicious.di.module.NetworkModule
 import com.sam.movielicious.ui.moviedetails.MovieDetailsVM
 import com.sam.movielicious.ui.movies.MoviesListViewModel
 import dagger.Component

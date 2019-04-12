@@ -1,4 +1,4 @@
-package com.sam.movielicious.injection.module
+package com.sam.movielicious.di.module
 
 import com.sam.movielicious.network.RestApi
 import com.sam.movielicious.utils.BASE_URL

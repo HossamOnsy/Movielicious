@@ -1,9 +1,9 @@
 package com.sam.movielicious
 
 import android.arch.lifecycle.ViewModel
-import com.sam.movielicious.injection.component.DaggerViewModelInjector
-import com.sam.movielicious.injection.component.ViewModelInjector
-import com.sam.movielicious.injection.module.NetworkModule
+import com.sam.movielicious.di.component.DaggerViewModelInjector
+import com.sam.movielicious.di.component.ViewModelInjector
+import com.sam.movielicious.di.module.NetworkModule
 import com.sam.movielicious.ui.moviedetails.MovieDetailsVM
 import com.sam.movielicious.ui.movies.MoviesListViewModel
 
