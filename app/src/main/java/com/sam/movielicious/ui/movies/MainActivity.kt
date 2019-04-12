@@ -1,4 +1,4 @@
-package com.sam.movielicious
+package com.sam.movielicious.ui.movies
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -11,8 +11,8 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.util.DisplayMetrics
+import com.sam.movielicious.R
 import com.sam.movielicious.databinding.ActivityMovieListBinding
-import com.sam.movielicious.ui.movies.MoviesListViewModel
 import com.sam.movielicious.utils.PaginationScrollListener
 
 

@@ -1,4 +1,4 @@
-package com.sam.movielicious
+package com.sam.movielicious.ui.moviedetails
 
 import android.app.AlertDialog
 import android.arch.lifecycle.Observer
@@ -13,8 +13,8 @@ import android.util.Log
 import android.view.View
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.bumptech.glide.Glide
+import com.sam.movielicious.R
 import com.sam.movielicious.databinding.ActivityMovieDetailsBinding
-import com.sam.movielicious.ui.moviedetails.MovieDetailsVM
 import dmax.dialog.SpotsDialog
 import kotlinx.android.synthetic.main.activity_movie_details.*
 import java.util.*

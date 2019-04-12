@@ -3,7 +3,7 @@ package com.sam.movielicious.ui
 import android.content.Intent
 import android.view.View
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
-import com.sam.movielicious.MovieDetailsActivity
+import com.sam.movielicious.ui.moviedetails.MovieDetailsActivity
 
 class Handler(){
 

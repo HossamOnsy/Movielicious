@@ -32,8 +32,12 @@ buildscript {
     ext.kotlin_version = '1.2.30'
     ext.lifecycle_version = '1.1.1'
     ext.retrofit_version = '2.4.0'
+    ext.rxjava_Version = '2.2.0'
+    ext.rxAndroid_Version = '2.0.2'
     ext.dagger2_version = '2.16'
     ext.android_support_version = '28.0.0'
+    ext.lottieVersion = '2.7.0'
+    ext.glideVersion = '4.9.0'
 }
 
 dependencies {
@@ -57,9 +61,6 @@ dependencies {
     // LiveData & ViewModel
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"
 
-//    // Data binding
-//    kapt "com.android.databinding:compiler:3.1.3"
-
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
@@ -70,8 +71,8 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
 
     //Glide
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
 
     // Dagger 2
     implementation "com.google.dagger:dagger:$dagger2_version"
@@ -79,19 +80,16 @@ dependencies {
     compileOnly "org.glassfish:javax.annotation:3.1.1"
 
     //Rx
-    implementation "io.reactivex.rxjava2:rxjava:2.2.0"
-    implementation "io.reactivex.rxjava2:rxandroid:2.0.2"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava_Version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid_Version"
 
-    //Mockito
+    //Mockito // Testing
     testImplementation 'org.mockito:mockito-inline:2.11.0'
-
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
-
-    implementation 'com.github.d-max:spots-dialog:1.1@aar'
-
     testImplementation 'android.arch.core:core-testing:1.1.1'
 
+    // For Animations and Design
+    implementation "com.airbnb.android:lottie:$lottieVersion"
     implementation 'com.github.mohammadatif:Animatoo:master'
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
 
 }
