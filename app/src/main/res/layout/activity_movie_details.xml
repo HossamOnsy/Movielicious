@@ -9,7 +9,9 @@
 
     </data>
 
-
+<ScrollView android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:background="@drawable/gradientnav"
@@ -100,14 +102,13 @@
         <TextView
                 android:id="@+id/movie_overview"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_margin="16sp"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:mutableText="@{viewModel.getMovieOverview()}"
                 app:layout_constraintTop_toBottomOf="@id/movie_rating"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 
@@ -133,4 +134,5 @@
 
 
     </android.support.constraint.ConstraintLayout>
+</ScrollView>
 </layout>

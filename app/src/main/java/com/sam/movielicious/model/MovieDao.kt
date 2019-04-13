@@ -6,15 +6,17 @@ import android.arch.persistence.room.Query
 
 @Dao
 interface MovieDao {
-    @Query("DELETE  FROM MovieDetailModel Where id = :id ")
-    fun deleteModel(id: Int)
+    @Query("DELETE  FROM MovieDetailModel Where id = :id and favorite = :favorite ")
+    fun deleteModel(id: Int,favorite:Boolean)
 
 
-    @Query("SELECT * FROM MovieDetailModel Where id = :id ")
-    fun getModel(id: Int): MovieDetailModel
+    @Query("SELECT * FROM MovieDetailModel Where id = :id and favorite = :favorite ")
+    fun getModel(id: Int,favorite:Boolean): MovieDetailModel
+
 
     @get:Query("SELECT * FROM MovieDetailModel ")
     val loadAllModels: List<MovieDetailModel>
+
 
     @Insert
     fun insert(vararg movieDetailModel: MovieDetailModel)

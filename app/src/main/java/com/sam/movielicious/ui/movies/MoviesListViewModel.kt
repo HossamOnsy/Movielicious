@@ -36,6 +36,7 @@ class MoviesListViewModel : BaseViewModel() {
     }
 
     fun loadMovies() {
+
         subscription = restApi.getTopRatedMovies(API_KEY, page)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -45,6 +46,11 @@ class MoviesListViewModel : BaseViewModel() {
                 { result -> onRetrieveMoviesListSuccess(result) },
                 { error -> onRetrieveMoviesListError(error) }
             )
+    }
+
+    fun clearList(){
+        movieListAdapter.clearList()
+        loadMovies()
     }
 
     override fun onCleared() {
@@ -65,8 +71,10 @@ class MoviesListViewModel : BaseViewModel() {
 
     private fun onRetrieveMoviesListSuccess(moviesListModel: MoviesListModel) {
         total_pages = moviesListModel.total_pages
-        if (total_pages > page)
+        if (total_pages > page) {
             movieListAdapter.updateMovieList(moviesListModel.results)
+
+        }
 
     }
 

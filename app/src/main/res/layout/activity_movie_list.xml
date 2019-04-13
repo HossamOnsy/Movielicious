@@ -4,7 +4,7 @@
     <data>
         <variable
                 name="viewModel"
-                type="com.sam.movielicious.ui.movies.MoviesListViewModel" />
+                type="com.sam.movielicious.ui.movies.MoviesListViewModel"/>
     </data>
     <android.support.constraint.ConstraintLayout
             android:background="@drawable/gradientnav"
@@ -18,19 +18,24 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-        <android.support.v7.widget.RecyclerView
-                android:id="@+id/movies_list"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:scrollbars="vertical"
-                android:scrollbarThumbVertical="@android:color/darker_gray"
-                android:scrollbarSize="5dp"
-                app:adapter="@{viewModel.getMovieListAdapter()}"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"/>
+        <android.support.v4.widget.SwipeRefreshLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/swiperefresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/movies_list"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scrollbars="vertical"
+                    android:scrollbarThumbVertical="@android:color/darker_gray"
+                    android:scrollbarSize="5dp"
+                    app:adapter="@{viewModel.getMovieListAdapter()}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+        </android.support.v4.widget.SwipeRefreshLayout>
     </android.support.constraint.ConstraintLayout>
 </layout>

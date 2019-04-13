@@ -43,7 +43,7 @@ class MovieDetailsVM() : BaseViewModel() {
         if(checkInDatabase)
             subscription =
                 Observable.fromCallable {
-                    db.movieDao().getModel(id.toInt()) }
+                    db.movieDao().getModel(id.toInt(),true) }
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .doOnSubscribe {onRetrieveMovieDetailsStart() }
@@ -83,7 +83,9 @@ class MovieDetailsVM() : BaseViewModel() {
             .fallbackToDestructiveMigration()
             .build()
         if(movieFav.value==false)
-           subscription = Observable.fromCallable { db.movieDao().insert(movieDetailsModel) }
+           subscription = Observable.fromCallable {
+               movieDetailsModel.favorite=true
+               db.movieDao().insert(movieDetailsModel) }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe { }
@@ -98,7 +100,7 @@ class MovieDetailsVM() : BaseViewModel() {
                         Log.v("error", "error -> " + error.message)}
                 )
         else
-            subscription = Observable.fromCallable { db.movieDao().deleteModel(id.toInt()) }
+            subscription = Observable.fromCallable { db.movieDao().deleteModel(id.toInt(),movieDetailsModel.favorite) }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe { }

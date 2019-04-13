@@ -2,6 +2,7 @@ package com.sam.movielicious.ui.movies
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.arch.persistence.room.Room
 import android.content.res.Configuration
 import android.databinding.DataBindingUtil
 import android.os.Bundle
@@ -11,23 +12,29 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.util.DisplayMetrics
-import com.sam.movielicious.R
 import com.sam.movielicious.databinding.ActivityMovieListBinding
+import com.sam.movielicious.model.AppDatabase
 import com.sam.movielicious.utils.PaginationScrollListener
+import kotlinx.android.synthetic.main.activity_movie_list.*
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMovieListBinding
     private lateinit var viewModel: MoviesListViewModel
-
+    private lateinit  var db : AppDatabase
 
     private var errorSnackbar: Snackbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-            binding = DataBindingUtil.setContentView(this, R.layout.activity_movie_list)
+
+        db = Room.databaseBuilder(this, AppDatabase::class.java, "MovieDetailModel")
+            .fallbackToDestructiveMigration()
+            .build()
+
+            binding = DataBindingUtil.setContentView(this, com.sam.movielicious.R.layout.activity_movie_list)
                 val metrics = DisplayMetrics()
                 windowManager.defaultDisplay.getMetrics(metrics)
 
@@ -69,6 +76,14 @@ class MainActivity : AppCompatActivity() {
 
             }
         })
+
+        swiperefresh.setOnRefreshListener( {
+
+            swiperefresh.setRefreshing(false)
+            viewModel.page=1
+            viewModel.clearList()
+
+        })
     }
 
     private fun showEndPart(msg: String) {
@@ -80,7 +95,7 @@ class MainActivity : AppCompatActivity() {
 
         if (!isLastPage) {
             errorSnackbar = Snackbar.make(binding.root, errorMessage, Snackbar.LENGTH_INDEFINITE)
-            errorSnackbar?.setAction(R.string.retry, viewModel.errorClickListener)
+            errorSnackbar?.setAction(com.sam.movielicious.R.string.retry, viewModel.errorClickListener)
         } else {
             errorSnackbar = Snackbar.make(binding.root, errorMessage, Snackbar.LENGTH_SHORT)
         }
@@ -97,11 +112,14 @@ class MainActivity : AppCompatActivity() {
     fun getMoreItems() {
         if (viewModel.total_pages > viewModel.page) {
             viewModel.page++
+
             viewModel.loadMovies()
+
+
         } else {
             isLastPage = true
             if (errorSnackbar == null || errorSnackbar != null && !errorSnackbar!!.isShown) {
-                showError(R.string.no_more_results)
+                showError(com.sam.movielicious.R.string.no_more_results)
             }
         }
 

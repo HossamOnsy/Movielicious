@@ -35,6 +35,10 @@ class MovieListAdapter: RecyclerView.Adapter<MovieListAdapter.ViewHolder>() {
         notifyDataSetChanged()
 
     }
+    fun clearList(){
+        this.movieList.clear()
+        notifyDataSetChanged()
+    }
 
     class ViewHolder(private val binding: MovieItemBinding):RecyclerView.ViewHolder(binding.root){
         private val viewModel = MovieItemViewModel()
