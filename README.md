@@ -2,6 +2,10 @@
 
 It's an App that shows you the most popular movies in this instant , it's build using Model-View-ViewModel Concepts(MVVM) , Dependency Injections such as Dagger 2(DI) , Lifecycles , Room(Database Persistance Library) , Databinding , RxJava 2 (Networking) , Mockito (For Unit Testing) 
 
+
+![alt text](https://raw.githubusercontent.com/HossamOnsy/Movielicious/master/app/src/main/res/0jpg)![alt text](https://raw.githubusercontent.com/HossamOnsy/Movielicious/master/app/src/main/res/1.jpg)![alt text](https://raw.githubusercontent.com/HossamOnsy/Movielicious/master/app/src/main/res/2.jpg)![alt text](https://raw.githubusercontent.com/HossamOnsy/Movielicious/master/app/src/main/res/3.jpg)![alt text](https://raw.githubusercontent.com/HossamOnsy/Movielicious/master/app/src/main/res/4.jpg)![alt text](https://raw.githubusercontent.com/HossamOnsy/Movielicious/master/app/src/main/res/5.jpg)
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -10,7 +14,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 ```
 Very Important to Add your API Key in utils/Constants.kt in API_KEY variable 
-
 ```
 
 ### Knowledge with :
