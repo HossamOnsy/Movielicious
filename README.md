@@ -56,7 +56,7 @@ you can run them by right clicking on the test and then press run
 2,3 are under the test folder as they are testing the call of the apis and making sure they are being called 
 
 
-### What did i use ? 
+### What did I use in testing ? 
 
 I've used 2 ways :
 
@@ -82,7 +82,12 @@ I've used 2 ways :
         ).build()
     }
 ```
+### Why did I use Room ? 
 
+1.When you press on a movie item , you will enter into MovieDetailsScreen.
+2.Then it will check if the element is in your favorites , if yes it will load it from the database, otherwise it will call the api to get your movie details from it 
+3.if it's not in your favorite , You will be able to favorite that item and once you do that , this item is set into the database as one of your favorite movies
+4.when you enter to that movie details again step 2 will apply and hence you will see the favorite button lit as indication that you have this element marked as one of your favorite movies 
 
 ## Built With
 
