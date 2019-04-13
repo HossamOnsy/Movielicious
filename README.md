@@ -30,11 +30,11 @@ Familiar with Networking
 
 ## Development process
 <br>
-1. API Service -> API Service Unit Test with api response mock files (checking connection)
-2. DAO -> DAO Unit Test
-3. ViewModel -> ViewModel Unit Test
-4. DI & Refactoring
-5. Implmentating UI & Layouts 
+1. API Service -> API Service Unit Test with api response mock files (checking connection) <br>
+2. DAO -> DAO Unit Test <br>
+3. ViewModel -> ViewModel Unit Test <br>
+4. DI & Refactoring <br>
+5. Implmentating UI & Layouts <br>
 <br>
 
 ## Tests
