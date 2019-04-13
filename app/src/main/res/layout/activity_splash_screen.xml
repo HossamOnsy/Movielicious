@@ -15,5 +15,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_height="match_parent"/>
+    <ImageView android:layout_width="200sp"
+               android:layout_height="100sp"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               android:src="@drawable/poweredbymoviedb"/>
 
 </android.support.constraint.ConstraintLayout>
