@@ -3,7 +3,8 @@
 It's an App that shows you the most popular movies in this instant , it's build using Model-View-ViewModel Concepts(MVVM) , Dependency Injections such as Dagger 2(DI) , Lifecycles , Room(Database Persistance Library) , Databinding , RxJava 2 (Networking) , Mockito (For Unit Testing) 
 
 
-![alt text](https://raw.githubusercontent.com/HossamOnsy/Movielicious/master/app/src/main/res/scs/0.jpg)![alt text](https://raw.githubusercontent.com/HossamOnsy/Movielicious/master/app/src/main/res/scs/2.jpg)![alt text](https://raw.githubusercontent.com/HossamOnsy/Movielicious/master/app/src/main/res/scs/3.jpg)![alt text](https://raw.githubusercontent.com/HossamOnsy/Movielicious/master/app/src/main/res/scs/4.jpg)![alt text]
+![alt text](https://raw.githubusercontent.com/HossamOnsy/Movielicious/master/app/src/main/res/scs/0.jpg)![alt text](https://raw.githubusercontent.com/HossamOnsy/Movielicious/master/app/src/main/res/scs/2.jpg)![alt text](https://raw.githubusercontent.com/HossamOnsy/Movielicious/master/app/src/main/res/scs/3.jpg)![alt text](https://raw.githubusercontent.com/HossamOnsy/Movielicious/master/app/src/main/res/scs/4.jpg)
+
 
 
 ## Getting Started
