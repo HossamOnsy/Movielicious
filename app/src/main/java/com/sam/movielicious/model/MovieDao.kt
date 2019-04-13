@@ -6,11 +6,15 @@ import android.arch.persistence.room.Query
 
 @Dao
 interface MovieDao {
-    @Query("SELECT * FROM movieDetailModel Where id = :id ")
+    @Query("DELETE  FROM MovieDetailModel Where id = :id ")
+    fun deleteModel(id: Int)
+
+
+    @Query("SELECT * FROM MovieDetailModel Where id = :id ")
     fun getModel(id: Int): MovieDetailModel
 
-    @Query("SELECT * FROM movieDetailModel ")
-    fun loadAllModels(): ArrayList<MovieDetailModel>
+    @get:Query("SELECT * FROM MovieDetailModel ")
+    val loadAllModels: List<MovieDetailModel>
 
     @Insert
     fun insert(vararg movieDetailModel: MovieDetailModel)

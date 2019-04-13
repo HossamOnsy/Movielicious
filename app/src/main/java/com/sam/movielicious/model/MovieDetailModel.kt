@@ -1,34 +1,48 @@
 package com.sam.movielicious.model
 
 import android.arch.persistence.room.Entity
+import android.arch.persistence.room.Ignore
 import android.arch.persistence.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "movieDetailModel")
 data class MovieDetailModel(
-    val adult: Boolean,
-    val backdrop_path: String,
-    val belongs_to_collection: Any,
-    val budget: Int,
-    val genres: List<Genre>,
-    val homepage: String,
+    var adult: Boolean?,
+    var backdrop_path: String?,
+    @Ignore
+    var belongs_to_collection: Any?,
+    var budget: Int?,
+    @Ignore
+    var genres: List<Genre>?,
+    var homepage: String?,
     @field:PrimaryKey
-    val id: Int,
-    val imdb_id: String,
-    val original_language: String,
-    val original_title: String,
-    val overview: String,
-    val popularity: Double,
-    val poster_path: String,
-    val production_companies: List<ProductionCompany>,
-    val production_countries: List<ProductionCountry>,
-    val release_date: String,
-    val revenue: Int,
-    val runtime: Int,
-    val spoken_languages: List<SpokenLanguage>,
-    val status: String,
-    val tagline: String,
-    val title: String,
-    val video: Boolean,
-    val vote_average: Double,
-    val vote_count: Int
-)
+    var id: Int ,
+    var imdb_id: String?,
+    var original_language: String?,
+    var original_title: String?,
+    var overview: String?,
+    var popularity: Double?,
+    var poster_path: String?,
+    @Ignore
+    var production_companies: List<ProductionCompany>?,
+    @Ignore
+    var production_countries: List<ProductionCountry>?,
+    var release_date: String?,
+    var revenue: Int?,
+    var runtime: Int?,
+    @Ignore
+    var spoken_languages: List<SpokenLanguage>?,
+    var status: String?,
+    var tagline: String?,
+    var title: String?,
+    var video: Boolean?,
+    var vote_average: Double?,
+    var vote_count: Int?,
+    var favorite: Boolean= false
+){
+    constructor():this(null,"0",0.0,null,null,null,
+        -1,"","",null,null,null,
+        null,null,
+        null,null,
+        null,null,null,
+        null,null,null,null,null,null,false)
+}

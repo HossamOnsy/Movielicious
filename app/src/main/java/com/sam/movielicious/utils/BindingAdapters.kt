@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.sam.movielicious.R
 import com.sam.movielicious.utils.extension.getParentActivity
 
 
@@ -37,7 +38,7 @@ fun setAdapter(view: RecyclerView, adapter: RecyclerView.Adapter<*>) {
 fun loadImage(view: ImageView, imageUrl: String) {
     Glide.with(view.getContext())
         .load(imageUrl)
-        .placeholder(android.R.drawable.ic_menu_info_details)
+        .placeholder(R.drawable.loading)
         .into(view)
 
 }

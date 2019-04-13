@@ -11,6 +11,7 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.bumptech.glide.Glide
 import com.sam.movielicious.R
@@ -40,7 +41,6 @@ class MovieDetailsActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private fun speakOut() {
         t1?.speak(msg, TextToSpeech.QUEUE_FLUSH, null);
-
     }
 
     private lateinit var binding: ActivityMovieDetailsBinding
@@ -71,7 +71,8 @@ class MovieDetailsActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             if (intent.hasExtra("movieTitle")) {
                 movieTitle = intent.getStringExtra("movieTitle")
             }
-            viewModel.loadMovieDetails()
+
+            viewModel.loadMovieDetails(applicationContext,true)
 
             binding.viewModel = viewModel
             msg = "Loading $movieTitle Data"
@@ -83,8 +84,17 @@ class MovieDetailsActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             initiateSpeaker();
             observing();
+            settingListeners();
         }
 
+
+    }
+
+    private fun settingListeners() {
+
+        fav_img.setOnClickListener{
+            viewModel.insertModel(applicationContext)
+        }
 
     }
 
@@ -114,11 +124,16 @@ class MovieDetailsActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     in 8..10  -> movieVoteInt = 5
                 }
                 movie_rating.numStars=movieVoteInt
+                movie_rating.rating= (x)/2
             }
         })
 
         viewModel.movieURL.observe(this, Observer { movieURL ->
-            if (movieURL != null) showImage(movieURL)
+            if (movieURL != null) showImage(poster_image,movieURL)
+        })
+
+        viewModel.movieFav.observe(this, Observer { movieFav ->
+            if (movieFav != null) showImage(fav_img,movieFav.toString())
         })
 
         viewModel.errorMessage.observe(this, Observer { errorMessage ->
@@ -127,17 +142,31 @@ class MovieDetailsActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     }
 
-    private fun showImage(imageUrl: String) {
+    private fun showImage(imgView: ImageView ,imageUrl: String) {
+        if(imageUrl.equals("true")||imageUrl.equals("false")){
+
+            if(imageUrl.equals("true"))
+                Glide.with(this)
+                    .load(R.drawable.ic_like)
+                    .placeholder(R.drawable.loading)
+                    .into(imgView)
+            else
+                Glide.with(this)
+                    .load(R.drawable.ic_unlike)
+                    .placeholder(R.drawable.loading)
+                    .into(imgView)
+
+
+        }else
         Glide.with(this)
             .load(imageUrl)
-            .placeholder(android.R.drawable.ic_menu_info_details)
-            .into(poster_image)
+            .placeholder(R.drawable.loading)
+            .into(imgView)
     }
 
 
     private fun showError(@StringRes errorMessage: Int) {
-        errorSnackbar = Snackbar.make(binding.root, errorMessage, Snackbar.LENGTH_INDEFINITE)
-        errorSnackbar?.setAction(R.string.retry, viewModel.errorClickListener)
+        errorSnackbar = Snackbar.make(binding.root, errorMessage, Snackbar.LENGTH_SHORT)
         errorSnackbar?.show()
     }
 

@@ -21,7 +21,7 @@ class SplashScreenActivity : AppCompatActivity() {
         Handler().postDelayed({
             goToMain()
 
-        }, 3000)
+        }, 1000)
     }
 
     private fun goToMain() {

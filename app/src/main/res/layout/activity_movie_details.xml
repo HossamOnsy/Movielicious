@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -12,7 +12,7 @@
 
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:background="@color/white"
+            android:background="@drawable/gradientnav"
             android:layout_height="match_parent">
 
 
@@ -33,7 +33,8 @@
                 android:layout_height="0dp"
                 android:textStyle="bold"
                 android:padding="16sp"
-                android:textSize="20sp"
+                android:textSize="24sp"
+                android:fontFamily="@font/dancingscript"
                 android:background="@color/transparentBlack"
                 android:textColor="@color/white"
                 app:mutableText="@{viewModel.getMovieTitle()}"
@@ -70,35 +71,45 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
+
         <RatingBar
                 android:id="@+id/movie_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:textStyle="bold"
-                android:ellipsize="end"
-                android:maxLines="1"
                 android:clickable="false"
-                android:foregroundTint="@color/white"
-                android:backgroundTint="@color/colorAccent"
-                android:textSize="10sp"
+                android:progressTint="@color/gold"
+                android:secondaryProgress="@color/gold"
                 android:layout_margin="6sp"
                 android:gravity="end"
-                app:layout_constraintTop_toBottomOf="@id/movie_release_date"
+                app:layout_constraintTop_toBottomOf="@id/movie_title"
                 app:layout_constraintStart_toStartOf="parent"/>
 
+        <ImageView
+                android:id="@+id/fav_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_unlike"
+                app:layout_constraintTop_toTopOf="@id/movie_rating"
+                app:layout_constraintBottom_toBottomOf="@id/movie_rating"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="32sp"
 
-        <!--<TextView-->
-        <!--android:id="@+id/movie_overview"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:ellipsize="end"-->
-        <!--android:maxLines="2"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:layout_margin="16sp"-->
-        <!--app:mutableText="@{viewModel.getMovieOverview()}"-->
-        <!--app:layout_constraintTop_toBottomOf="@id/poster_image"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"/>-->
+        />
+
+        <TextView
+                android:id="@+id/movie_overview"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_margin="16sp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:mutableText="@{viewModel.getMovieOverview()}"
+                app:layout_constraintTop_toBottomOf="@id/movie_rating"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
 
         <android.support.constraint.Guideline
                 android:layout_width="wrap_content"

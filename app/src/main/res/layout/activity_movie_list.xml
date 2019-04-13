@@ -7,6 +7,7 @@
                 type="com.sam.movielicious.ui.movies.MoviesListViewModel" />
     </data>
     <android.support.constraint.ConstraintLayout
+            android:background="@drawable/gradientnav"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <ProgressBar

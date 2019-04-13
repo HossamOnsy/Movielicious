@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#003153</color>
+    <color name="colorPrimaryDark">#002147</color>
+    <color name="colorAccent">#FFD700</color>
+    <!--<color name="colorAccent">#D81B60</color>-->
 
     <color name="transparentBlack">#aa000000</color>
     <color name="transparentGrey">#55000000</color>
     <color name="navy">#000067</color>
     <color name="white">#aaffffff</color>
+
+
+    <color name="salmon">#ff7f7f</color>
+    <color name="foush">#ff4c4c</color>
+    <color name="red">#ff1919</color>
+    <color name="paige">#ffd27f</color>
+    <color name="semiorange">#ffc04c</color>
+    <color name="semipaige">#ffef99</color>
+    <color name="semiyellow">#ffe766</color>
+    <color name="yellow">#ffdf32</color>
+    <color name="gold">#FFD700</color>
 
 
 </resources>

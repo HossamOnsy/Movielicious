@@ -39,7 +39,8 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:textStyle="bold"
-                    android:padding="16sp"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/dancingscript"
                     android:background="@color/transparentBlack"
                     android:textColor="@color/white"
                     app:mutableText="@{viewModel.getMovieTitle()}"
@@ -64,19 +65,7 @@
                     app:mutableText="@{viewModel.getMovieVote()}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
-            <!--<TextView-->
-                    <!--android:id="@+id/movie_overview"-->
-                    <!--android:layout_width="0dp"-->
-                    <!--android:ellipsize="end"-->
-                    <!--android:maxLines="2"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginTop="8dp"-->
-                    <!--android:layout_margin="16sp"-->
-                    <!--app:mutableText="@{viewModel.getMovieOverview()}"-->
-                    <!--app:layout_constraintTop_toBottomOf="@id/poster_image"-->
-                    <!--app:layout_constraintEnd_toEndOf="parent"-->
-                    <!--app:layout_constraintStart_toStartOf="parent"/>-->
-            <android.support.constraint.Guideline
+           <android.support.constraint.Guideline
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/guideline"
