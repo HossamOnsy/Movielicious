@@ -2,7 +2,7 @@ package com.sam.movielicious.utils
 
 //const val BASE_URL: String = "https://jsonplaceholder.typicode.com"
 
-const val API_KEY: String = "<ENTER YOUR API KEY HERE>"
+const val API_KEY: String = "92268add4b3a98b593e13325b061f67b"
 
 const val BASE_URL: String = "https://api.themoviedb.org"
 
