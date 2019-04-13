@@ -9,21 +9,25 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 ```
+Very Important to Add your API Key in utils/Constants.kt in API_KEY variable 
+
+```
+
+### Knowledge with :
+
+```
 Android Studio
 Familiar with Kotlin
 Familiar with Dependency Injections
 Familiar with SQLite Databases
 Familiar with Databinding
 Familiar with Networking
-
 ```
 
-## Running the tests
+## Tests
 
 There are 3 Tests available 
 you can run them by right clicking on the test and then press run
-
-### Break down into end to end tests
 
 1 is under the androidTest folder and this test will test the database entry of your favorite movie and then making sure it's inside the database
 
@@ -39,7 +43,7 @@ you can run them by right clicking on the test and then press run
 2,3 are under the test folder as they are testing the call of the apis and making sure they are being called 
 
 
-### And coding style tests
+### What did i use ? 
 
 I've used 2 ways :
 
@@ -66,10 +70,6 @@ I've used 2 ways :
     }
 ```
 
-
-## Deployment
-
-It's Important to Add your API Key in utils/Constants.kt in API_KEY variable 
 
 ## Built With
 
