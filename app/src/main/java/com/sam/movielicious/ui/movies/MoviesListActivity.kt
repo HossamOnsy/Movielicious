@@ -18,7 +18,7 @@ import com.sam.movielicious.utils.PaginationScrollListener
 import kotlinx.android.synthetic.main.activity_movie_list.*
 
 
-class MainActivity : AppCompatActivity() {
+class MoviesListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMovieListBinding
     private lateinit var viewModel: MoviesListViewModel

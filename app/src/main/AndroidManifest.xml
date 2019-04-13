@@ -13,7 +13,7 @@
             android:roundIcon="@mipmap/portal"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".ui.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -24,7 +24,7 @@
                 android:name=".ui.moviedetails.MovieDetailsActivity"
                 android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ui.movies.MainActivity">
+        <activity android:name=".ui.movies.MoviesListActivity">
 
         </activity>
     </application>

@@ -5,7 +5,7 @@ import android.arch.persistence.room.Room
 import android.content.Context
 import android.util.Log
 import android.view.View
-import com.sam.movielicious.BaseViewModel
+import com.sam.movielicious.base.BaseViewModel
 import com.sam.movielicious.R
 import com.sam.movielicious.model.AppDatabase
 import com.sam.movielicious.model.MovieDetailModel
@@ -122,7 +122,7 @@ class MovieDetailsVM() : BaseViewModel() {
         subscription.dispose()
     }
 
-    private fun onRetrieveMovieDetailsStart() {
+    fun onRetrieveMovieDetailsStart() {
         loadingVisibility.value = View.VISIBLE
 
         errorMessage.value = null

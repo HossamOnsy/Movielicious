@@ -1,11 +1,12 @@
-package com.sam.movielicious
+package com.sam.movielicious.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
-import com.sam.movielicious.ui.movies.MainActivity
+import com.sam.movielicious.R
+import com.sam.movielicious.ui.movies.MoviesListActivity
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -25,7 +26,7 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun goToMain() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, MoviesListActivity::class.java))
         Animatoo.animateFade(this)
         finish()
     }

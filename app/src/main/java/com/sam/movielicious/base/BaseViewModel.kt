@@ -1,4 +1,4 @@
-package com.sam.movielicious
+package com.sam.movielicious.base
 
 import android.arch.lifecycle.ViewModel
 import com.sam.movielicious.di.component.DaggerViewModelInjector

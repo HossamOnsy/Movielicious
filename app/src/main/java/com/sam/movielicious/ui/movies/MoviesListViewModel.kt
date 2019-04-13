@@ -3,7 +3,7 @@ package com.sam.movielicious.ui.movies
 import android.arch.lifecycle.MutableLiveData
 import android.util.Log
 import android.view.View
-import com.sam.movielicious.BaseViewModel
+import com.sam.movielicious.base.BaseViewModel
 import com.sam.movielicious.R
 import com.sam.movielicious.model.MoviesListModel
 import com.sam.movielicious.network.RestApi
