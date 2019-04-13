@@ -83,7 +83,6 @@ I've used 2 ways :
 
 
 ## Specs & Open-source libraries
-- Minimum SDK 16
 - 100% Kotlin based
 - MVVM Architecture
 - Architecture Components (Lifecycle, LiveData, ViewModel, Room Persistence)
