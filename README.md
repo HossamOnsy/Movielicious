@@ -81,9 +81,21 @@ I've used 2 ways :
 
 
 
-## Acknowledgments
 
-* airbnb/lottie , mohammadatif/Animatoo 
-* Inspiration
-* etc
+## Specs & Open-source libraries
+- Minimum SDK 16
+- 100% Kotlin based
+- MVVM Architecture
+- Architecture Components (Lifecycle, LiveData, ViewModel, Room Persistence)
+- Material Design & Animations
+- The Movie DB API
+- [Dagger2](https://github.com/google/dagger) for dependency injection
+- [Retrofit2 & Gson](https://github.com/square/retrofit) for constructing the REST API
+- [OkHttp3 logging interceptor](https://github.com/square/okhttp) for implementing interceptor, logging 
+- [Glide](https://github.com/bumptech/glide) for loading images
+- [Mockito-inline](https://github.com/nhaarman/mockito-kotlin) for Junit mock test
+- [airbnb/lottie](https://github.com/airbnb/lottie-android) for Animation
+- [Animatoo](https://github.com/mohammadatif/Animatoo) for Animation
+- [SpotsDialogue](https://github.com/d-max/spots-dialog) for Animation
+
 
