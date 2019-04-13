@@ -38,6 +38,7 @@ buildscript {
     ext.android_support_version = '28.0.0'
     ext.lottieVersion = '2.7.0'
     ext.glideVersion = '4.9.0'
+    ext.room_version = '1.1.1'
 }
 
 dependencies {
@@ -67,8 +68,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
 
     //OkHTTP Logging Interceptor
-
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
 
     //Glide
     implementation "com.github.bumptech.glide:glide:$glideVersion"
@@ -82,6 +82,10 @@ dependencies {
     //Rx
     implementation "io.reactivex.rxjava2:rxjava:$rxjava_Version"
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid_Version"
+
+    // Room
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    kapt "android.arch.persistence.room:compiler:$room_version"
 
     //Mockito // Testing
     testImplementation 'org.mockito:mockito-inline:2.11.0'

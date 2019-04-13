@@ -17,7 +17,6 @@ class SplashScreenActivity : AppCompatActivity() {
 
         av_from_code.setAnimation("loader.json")
         av_from_code.playAnimation()
-        av_from_code.loop(true)
 
         Handler().postDelayed({
             goToMain()
@@ -28,5 +27,7 @@ class SplashScreenActivity : AppCompatActivity() {
     private fun goToMain() {
         startActivity(Intent(this, MainActivity::class.java))
         Animatoo.animateFade(this)
+        finish()
     }
+
 }

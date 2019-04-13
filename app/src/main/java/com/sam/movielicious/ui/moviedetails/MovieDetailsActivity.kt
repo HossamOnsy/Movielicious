@@ -23,7 +23,7 @@ import java.util.*
 class MovieDetailsActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     override fun onInit(status: Int) {
 
-        if (status === TextToSpeech.SUCCESS) {
+        if (status == TextToSpeech.SUCCESS) {
 
             val result = t1?.setLanguage(Locale.US)
 
@@ -40,6 +40,7 @@ class MovieDetailsActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private fun speakOut() {
         t1?.speak(msg, TextToSpeech.QUEUE_FLUSH, null);
+
     }
 
     private lateinit var binding: ActivityMovieDetailsBinding
@@ -98,6 +99,21 @@ class MovieDetailsActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             } else {
                 dialog.dismiss()
+            }
+        })
+        movie_rating.isEnabled=false
+        viewModel.movieVote.observe(this, Observer { movieVote ->
+            if (movieVote != null) {
+                var movieVoteInt = 0
+                val x = movieVote.substring(0,3).toFloat()
+                when (x){
+                    in 0..2  -> movieVoteInt = 1
+                    in 2..4  -> movieVoteInt = 2
+                    in 4..6  -> movieVoteInt = 3
+                    in 6..8  -> movieVoteInt = 4
+                    in 8..10  -> movieVoteInt = 5
+                }
+                movie_rating.numStars=movieVoteInt
             }
         })
 

@@ -1,5 +1,9 @@
 package com.sam.movielicious.model
 
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
+
+@Entity
 data class MovieDetailModel(
     val adult: Boolean,
     val backdrop_path: String,
@@ -7,6 +11,7 @@ data class MovieDetailModel(
     val budget: Int,
     val genres: List<Genre>,
     val homepage: String,
+    @field:PrimaryKey
     val id: Int,
     val imdb_id: String,
     val original_language: String,

@@ -65,7 +65,7 @@ class MoviesListViewModel : BaseViewModel() {
 
     private fun onRetrieveMoviesListSuccess(moviesListModel: MoviesListModel) {
         total_pages = moviesListModel.total_pages
-        if (5 > page)
+        if (total_pages > page)
             movieListAdapter.updateMovieList(moviesListModel.results)
 
     }

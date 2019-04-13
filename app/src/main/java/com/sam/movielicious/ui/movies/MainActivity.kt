@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
     var isLoading: Boolean = false
 
     fun getMoreItems() {
-        if (5 > viewModel.page) {
+        if (viewModel.total_pages > viewModel.page) {
             viewModel.page++
             viewModel.loadMovies()
         } else {

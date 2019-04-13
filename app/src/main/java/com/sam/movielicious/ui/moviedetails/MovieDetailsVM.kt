@@ -74,16 +74,18 @@ class MovieDetailsVM(): BaseViewModel(){
     private val movieReleaseDate = MutableLiveData<String>()
     val movieURL = MutableLiveData<String>()
     val moviewId = MutableLiveData<String>()
-    val movieVoteInt = MutableLiveData<Int>()
+    val movieVote = MutableLiveData<String>()
 
 
     fun bind(movieDetailsModel: MovieDetailModel){
+
         movieTitle.value = movieDetailsModel.title
         movieOverview.value = movieDetailsModel.overview
         movieURL.value = POSTERPATHORIGINAL +movieDetailsModel.backdrop_path
         moviewId.value = movieDetailsModel.id.toString()
-        movieVoteInt.value = (movieDetailsModel.vote_average/10.0).toInt()
+        movieVote.value = movieDetailsModel.vote_average.toString()
         movieReleaseDate.value = movieDetailsModel.release_date
+
     }
 
 
@@ -106,14 +108,6 @@ class MovieDetailsVM(): BaseViewModel(){
         }
     }
 
-    fun getVoteByInt():MutableLiveData<Int>{
-        if(movieVoteInt.value!=null)
-            return movieVoteInt
-        else {
-            movieVoteInt.value = 1
-            return movieVoteInt
-        }
-    }
 
     fun getMovieId():MutableLiveData<String>{
         if(moviewId.value!=null)
