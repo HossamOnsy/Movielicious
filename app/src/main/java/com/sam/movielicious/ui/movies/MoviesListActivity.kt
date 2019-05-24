@@ -22,7 +22,6 @@ class MoviesListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMovieListBinding
     private lateinit var viewModel: MoviesListViewModel
-    private lateinit  var db : AppDatabase
 
     private var errorSnackbar: Snackbar? = null
 
@@ -30,9 +29,7 @@ class MoviesListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
-        db = Room.databaseBuilder(this, AppDatabase::class.java, "MovieDetailModel")
-            .fallbackToDestructiveMigration()
-            .build()
+
 
             binding = DataBindingUtil.setContentView(this, com.sam.movielicious.R.layout.activity_movie_list)
                 val metrics = DisplayMetrics()
